@@ -2,6 +2,7 @@
 
 #define SCRIPT(s) "~/.dotfiles/bin/" s
 
+static char brightness_cmd[] = SCRIPT("dwmb_brightness.sh");
 static char volume_cmd[] = SCRIPT("dwmb_volume.sh");
 static char wifi_cmd[] = SCRIPT("dwmb_wifi.sh");
 static char cpu_usage_cmd[] = SCRIPT("dwmb_cpu_usage.sh");
@@ -13,13 +14,14 @@ static char date_cmd[] = "date '+%a %b %d %H:%M '";
 // Modify this file to change what commands output to your statusbar, and recompile using the make command.
 static const Block blocks[] = {
     /* Icon */  /* Command */	/* Update Interval */	/* Update Signal */
-    { "",       volume_cmd,     1,		        1 }, // update signal used in dwmb_change_volume.sh
+    { "",       volume_cmd,     1,		        1 },
+    { "",       brightness_cmd, 5,		        2 },
     { "",       wifi_cmd,       1,		        0 },
     { "",       cpu_usage_cmd,  1,		        0 },
     { "",       cpu_load_cmd,   1,		        0 },
     { "",       memory_cmd,     1, 		        0 },
-    // { "",       battery_cmd,    1,		        0 },
-    { "",       date_cmd,       30,		        0 },
+    { "",       battery_cmd,    3,		        0 },
+    { "",       date_cmd,       5,		        0 },
 };
 
 //sets delimiter between status commands. NULL character ('\0') means no delimiter.
