@@ -1,8 +1,7 @@
 // colours with status2d https://dwm.suckless.org/patches/status2d/
 
-#define SCRIPT(s) "~/.dotfiles/bin/" s
+#define SCRIPT(s) "~/dotfiles/bin/" s
 
-static char brightness_cmd[] = SCRIPT("dwmb_brightness.sh");
 static char volume_cmd[] = SCRIPT("dwmb_volume.sh");
 static char wifi_cmd[] = SCRIPT("dwmb_wifi.sh");
 static char cpu_usage_cmd[] = SCRIPT("dwmb_cpu_usage.sh");
@@ -15,7 +14,6 @@ static char date_cmd[] = "date '+%a %b %d %H:%M '";
 static const Block blocks[] = {
     /* Icon */  /* Command */	/* Update Interval */	/* Update Signal */
     { "",       volume_cmd,     1,		        1 },
-    { "",       brightness_cmd, 5,		        2 },
     { "",       wifi_cmd,       1,		        0 },
     { "",       cpu_usage_cmd,  1,		        0 },
     { "",       cpu_load_cmd,   1,		        0 },
