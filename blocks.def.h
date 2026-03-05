@@ -18,10 +18,10 @@ static const Block blocks[] = {
     { "",       cpu_usage_cmd,  1,		        0 },
     { "",       cpu_load_cmd,   1,		        0 },
     { "",       memory_cmd,     1, 		        0 },
-    { "",       battery_cmd,    60,		        2 },
-    { "",       date_cmd,       5,		        0 },
+    { "",       battery_cmd,    120,		    2 },
+    { "",       date_cmd,       1,		        0 },
 };
 
-//sets delimiter between status commands. NULL character ('\0') means no delimiter.
+// sets delimiter between status commands. NULL character ('\0') means no delimiter.
 static char delim[] = "  ";
-static unsigned int delimLen = 5;
+static unsigned int delimLen = 3;
