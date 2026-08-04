@@ -1,0 +1,3 @@
+# update dwmblocks when AC connected/disconnected
+SUBSYSTEM=="power_supply", ACTION=="change", ENV{POWER_SUPPLY_ONLINE}=="0", ENV{POWER}="off", RUN+="/usr/local/bin/dwmblocks-bat-update"
+SUBSYSTEM=="power_supply", ACTION=="change", ENV{POWER_SUPPLY_ONLINE}=="1", ENV{POWER}="on",  RUN+="/usr/local/bin/dwmblocks-bat-update"

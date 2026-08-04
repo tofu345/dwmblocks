@@ -24,10 +24,13 @@ clean:
 
 install: dwmblocks
 	mkdir -p ${DESTDIR}${PREFIX}/bin
-	cp -f dwmblocks ${DESTDIR}${PREFIX}/bin
-	chmod 755 ${DESTDIR}${PREFIX}/bin/dwmblocks
+	install -m 0755 dwmblocks ${DESTDIR}${PREFIX}/bin
+	install -m 0755 blocks/dwmblocks-* ${DESTDIR}${PREFIX}/bin
+	install udev/99-dwmblocks-bat.rules /etc/udev/rules.d/
 
 uninstall:
-	rm -f ${DESTDIR}${PREFIX}/bin/dwmblocks
+	rm -f ${DESTDIR}${PREFIX}/bin/dwmblocks \
+		${DESTDIR}${PREFIX}/bin/dwmblocks-* \
+		/etc/udev/rules.d/99-dwmblocks-bat.rules
 
 .PHONY: all options clean install uninstall

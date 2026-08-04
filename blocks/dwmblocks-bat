@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+# Originally By: Jake@Linux https://gitlab.com/jped/scripts/-/blob/main/batt.sh?ref_type=heads
+
+status="$(cat /sys/class/power_supply/BAT0/status)"
+level="$(cat /sys/class/power_supply/BAT0/capacity)"
+
+icons=("󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹")
+icon=$(( ($level / 10) - 1 ))
+# icons=("" "" "" "" "")
+# icon=$(( ($level / 20) - 1 ))
+
+if [[ $icon == -1 ]]; then
+    icon=0
+fi
+
+color=""
+if [[ $status = "Not charging" ]]; then
+    color="^c#9ece6a^"
+elif [[ $status = "Charging" ]]; then
+    color="^c#7aa2f7^"
+elif [[ $status = "Discharging" && $level -le 35 ]]; then
+    color="^c#f7768e^"
+fi
+
+echo "$color${icons[$icon]} $level%^d^"

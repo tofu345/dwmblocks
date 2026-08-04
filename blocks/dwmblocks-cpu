@@ -1,0 +1,12 @@
+#!/usr/bin/python3
+
+# https://stackoverflow.com/a/70760502
+import psutil
+usage = int(psutil.cpu_percent(interval=0.5))
+
+if usage > 90:
+    print("^c#f7768e^", end="")
+elif usage > 75:
+    print("^c#e0af68^", end="")
+
+print(" {}%^d^".format(usage))

@@ -1,0 +1,16 @@
+#!/bin/sh
+
+# script for updating dwmblocks
+
+[ $# -ne 1 ] && echo "usage: $0 (vol|batt)" && exit 1
+
+# a nicety
+signal=""
+case $1 in
+    vol) signal=1;;
+    bat) signal=2;;
+    *)   echo "invalid block" && exit 1;;
+esac
+
+pid=$(pgrep dwmblocks)
+[[ -n $pid ]] && /bin/kill -RTMIN+$signal $pid
