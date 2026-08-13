@@ -1,0 +1,12 @@
+#!/bin/sh
+
+raw_temp=$(cat /sys/class/thermal/thermal_zone0/temp)
+temp=$(( raw_temp / 1000 ))
+
+if [[ temp -gt 80 ]]; then
+    echo -n "^c#f7768e^"
+elif [[ temp -gt 70 ]]; then
+    echo -n "^c#e0af68^"
+fi
+
+echo "${temp}°C^d^"
