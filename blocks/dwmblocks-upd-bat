@@ -1,4 +1,4 @@
 #!/bin/sh
 
 sleep 2 # necessary for some reason
-dwmblocks-update bat
+dwmblocks-upd bat
