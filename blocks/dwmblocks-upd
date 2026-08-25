@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # script for updating dwmblocks
 
@@ -12,5 +12,5 @@ case $1 in
     *)   echo "invalid block" && exit 1;;
 esac
 
-pid=$(pgrep dwmblocks)
-[[ -n $pid ]] && /bin/kill -RTMIN+$signal $pid
+pid=$(pgrep -x dwmblocks)
+[[ -n $pid ]] && /bin/kill "-RTMIN+$signal" "$pid"
