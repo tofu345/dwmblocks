@@ -1,0 +1,14 @@
+#!/bin/sh
+
+case $BUTTON in
+    1) alacritty -e nmtui & ;;
+esac
+
+device=$(nmcli -t -f DEVICE,TYPE device | grep wifi | cut -d: -f1 | head -n 1)
+state=$(nmcli | grep "${device}" -m 1 | awk '{ print $2 }')
+
+if [[ $state == "connected" ]]; then
+    echo "^c#9ece6a^ ^d^"
+else
+    echo "^c#f7768e^󰀝 Disconnected^d^"
+fi

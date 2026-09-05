@@ -1,0 +1,14 @@
+#!/bin/sh
+
+case $BUTTON in
+    1) alacritty -e impala & ;;
+esac
+
+data=$(iwctl station wlan0 show)
+state=$(echo "${data}" | grep State)
+regex="^ *State *connected"
+if [[ $state =~ $regex ]]; then
+    echo "^c#9ece6a^ ^d^"
+else
+    echo "^c#f7768e^󰀝 Disconnected^d^"
+fi

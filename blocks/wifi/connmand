@@ -1,0 +1,11 @@
+#!/bin/sh
+
+case $BUTTON in
+    1) connman-gtk & ;;
+esac
+
+if [[ $(connmanctl services) =~ ^\*.* ]]; then
+    echo "^c#9ece6a^ ^d^"
+else
+    echo "^c#f7768e^󰀝 Disconnected^d^"
+fi

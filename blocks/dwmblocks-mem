@@ -5,9 +5,9 @@ free | awk '/^Mem/{
     avail = int($2)
     usage = int((used/avail)*100)
 
-    if (usage > 85)
+    if (usage > 87.5)
         printf "^c#f7768e^"
-    else if (usage > 75)
+    else if (usage > 80)
         printf "^c#e0af68^"
 
     print " " usage "%^d^"
