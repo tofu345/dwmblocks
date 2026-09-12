@@ -1,10 +1,9 @@
-#!/bin/bash
+#!/bin/sh
 
 # script for updating dwmblocks
 
-[ $# -ne 1 ] && echo "usage: $0 (vol|batt)" && exit 1
+[ $# -ne 1 ] && echo "usage: $0 (vol|bat)" && exit 1
 
-# a nicety
 signal=""
 case $1 in
     vol) signal=1;;
@@ -13,4 +12,4 @@ case $1 in
 esac
 
 pid=$(pgrep -x dwmblocks)
-[[ -n $pid ]] && /bin/kill "-RTMIN+$signal" "$pid"
+[ -n "$pid" ] && /bin/kill "-RTMIN+$signal" "$pid"

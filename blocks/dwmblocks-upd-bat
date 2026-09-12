@@ -1,4 +1,3 @@
 #!/bin/sh
-
 sleep 2 # necessary for some reason
 dwmblocks-upd bat
