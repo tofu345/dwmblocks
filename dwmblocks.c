@@ -58,7 +58,7 @@ static void (*writestatus) () = pstdout;
 static char statusbar[LENGTH(blocks)][CMDLENGTH] = {0};
 static char statusstr[2][STATUSLENGTH];
 static int statusContinue = 1;
-static int returnStatus = 0;
+// static int returnStatus = 0;
 
 // opens process -cmd and stores output in -output
 void getcmd(const Block * block, char * output)
@@ -131,6 +131,7 @@ int getstatus(char * str, char * last)
     str[0] = '\0';
     for (unsigned int i = 0; i < LENGTH(blocks); i++)
         strcat(str, statusbar[i]);
+    strcat(str, " ");
     str[strlen(str) - strlen(delim)] = '\0';
     return strcmp(str, last); // 0 if they are the same
 }
