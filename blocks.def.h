@@ -1,4 +1,4 @@
-// my dwm build uses https://dwm.suckless.org/patches/extrabar/
+// requires https://dwm.suckless.org/patches/extrabar/
 // ';' splits the bar into: top, bottom left and bottom right
 
 static const Block blocks[] = {
