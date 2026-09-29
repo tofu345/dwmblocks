@@ -1,12 +1,6 @@
-// requires https://dwm.suckless.org/patches/extrabar/
-// ';' splits the bar into: top, bottom left and bottom right
-
 static const Block blocks[] = {
     /* icon  command                    interval (s)  update signal  */
     // { "",    "dwmblocks-wifi",          5,            0 },
-
-    { "",    "echo ';'",                0,            0 },
-    { "",    "echo ';'",                0,            0 },
 
     { "",    "dwmblocks-vol",           5,            1 },
 

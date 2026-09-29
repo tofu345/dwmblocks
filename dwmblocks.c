@@ -17,7 +17,7 @@
 #endif
 
 #define LENGTH(X)               (sizeof(X) / sizeof (X[0]))
-#define CMDLENGTH		500
+#define CMDLENGTH		140
 #define MIN(a, b)               ((a < b) ? a : b)
 #define STATUSLENGTH            (LENGTH(blocks) * CMDLENGTH + 1)
 
@@ -128,7 +128,7 @@ void setupsignals()
 int getstatus(char * str, char * last)
 {
     strcpy(last, str);
-    str[0] = '\0';
+    strcpy(str, " ");
     for (unsigned int i = 0; i < LENGTH(blocks); i++)
         strcat(str, statusbar[i]);
     strcat(str, " ");
