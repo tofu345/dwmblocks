@@ -8,12 +8,13 @@ import psutil
 dwmblocks_bar_height = 18
 bar_width = 8
 
-def verticalBar(percent: int, w: int, h: int, fg_color: str) -> str:
+def verticalBar(percent: int, w: int, h: int) -> str:
     bar_height = max(1, (percent * h) // 100)
     y = dwmblocks_bar_height - h
-    return f'^c{fg_color}^^r0,{y + h - bar_height},{w},{bar_height}^'
+    return f'^r0,{y + h - bar_height},{w},{bar_height}^'
 
+print("^c#a9b1d6^", end="")
 for percent in psutil.cpu_percent(interval=0.1, percpu=True):
-    print(verticalBar(int(percent), bar_width, 10, "#a9b1d6"), end="");
+    print(verticalBar(int(percent), bar_width, 10), end="");
     print(f'^f{bar_width}^', end="");
 print("^d^")
