@@ -3,19 +3,18 @@
 
 static const Block blocks[] = {
     /* icon  command                    interval (s)  update signal  */
-    // { "",    "dwmblocks-wifi",          5,            0 },
+    // { "",    "sb-wifi",          5,            0 },
 
     { "",    "echo ';'",                0,            0 },
     { "",    "echo ';'",                0,            0 },
 
-    { "",    "dwmblocks-vol",           5,            1 },
+    { "",    "sb-vol",           5,            1 },
+    { "",    "sb-cpu",           1,            0 },
+    { "",    "sb-temp",          1,            0 },
+    { "",    "sb-mem",           1,            0 },
+    // { "",    "sb-disk",          300,          0 },
 
-    { "",    "dwmblocks-cpu",           1,            0 },
-    { "",    "dwmblocks-temp",          1,            0 },
-    { "",    "dwmblocks-mem",           1,            0 },
-    // { "",    "dwmblocks-disk",          300,          0 },
-
-    { "",    "dwmblocks-bat",           300,          2 },
+    { "",    "sb-bat",           300,          2 },
     { "",    "date '+%a %b %d %H:%M'",  5,            0 },
 };
 
